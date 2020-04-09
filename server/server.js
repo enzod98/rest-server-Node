@@ -2,7 +2,7 @@ require('./config/config');
 
 const express = require('express');
 const app = express();
-console.log(process);
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extend: false }));
 app.use(bodyParser.json());
