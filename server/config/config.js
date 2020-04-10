@@ -6,12 +6,10 @@ process.env.PORT = process.env.PORT || 3000
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
 
-let urlDB
+let urlDB = 'mongodb+srv://esno:4ydIxbW6bvvel4uN@cluster0-kiv9c.mongodb.net/cafe'
 
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/cafe';
-} else {
-    urlDB = 'mongodb+srv://esno:4ydIxbW6bvvel4uN@cluster0-kiv9c.mongodb.net/cafe';
 }
 
 //Esto es una variable de entorno que creamos manualmente
