@@ -1,9 +1,6 @@
 {
     "name": "07-rest-server",
     "version": "1.0.0",
-    "engines": {
-        "node": "8.9.4"
-    },
     "description": "",
     "main": "index.js",
     "scripts": {
