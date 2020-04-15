@@ -17,12 +17,9 @@ app.get('/usuario', verificarToken, (req, res) => {
 
     desde = Number(desde);
 
-    let limite = req.query.limite || 5;
-    limite = Number(limite);
-
     Usuario.find({ estado: true }, 'nombre email role estado google img') //  Lo que está dentro del find son los filtros, entra llaves ponemos condiciones y entra apóstrofe ponemos los campos que queremos mostrar
         .skip(desde)
-        .limit(limite)
+        .limit(5)
         .exec((err, usuarios) => {
             if (err) {
                 return res.status(400).json({
