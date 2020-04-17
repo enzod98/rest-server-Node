@@ -39,8 +39,28 @@ let verificarAdmin = (req, res, next) => {
     }
 };
 
+/* Verificar token por url en las imágenes */
+verificarTokenImg = (req, res, next) => {
+    let token = req.query.token
+
+    jwt.verify(token, process.env.SEMILLA, (error, devolucion) => {
+        if (error) {
+            return res.status(401).json({
+                ok: false,
+                error: 'Token no válido'
+            })
+        }
+
+        req.usuario = devolucion.usuario;
+        next();
+
+    })
+
+}
+
 
 module.exports = {
     verificarToken,
-    verificarAdmin
+    verificarAdmin,
+    verificarTokenImg
 }
